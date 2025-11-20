@@ -11,14 +11,15 @@ from database.mysql_conector import MySQLConector
 class UltimateTicTacToe(QMainWindow):
 
     #inicialização da parte gráfica
-    def __init__(self):
+    def __init__(self, AutoStart = False):
         super().__init__()
         self.setWindowTitle("Jogo da velha com threads")
         self.setGeometry(100, 100, 900, 600)
         self.initUI()
         self.mySQLConector = MySQLConector(os.getenv("DB_HOST"), os.getenv("DB_USER"), os.getenv("DB_PASSWORD"), os.getenv("DB_NAME"))
-        time.sleep(5)
-        self.start_button.click()
+        if AutoStart:
+            time.sleep(5)
+            self.start_button.click()
 
     #Iniciando a interface
     def initUI(self):
