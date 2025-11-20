@@ -33,3 +33,7 @@ Arquivos importantes
 - `database/schema.sql` — esquema inicial do banco (usado pelo `docker-compose.yml`)
 - `docker-compose.yml` — serviço `db` (MySQL) que inicializa o schema
 - `requirements.txt` — dependências usadas no ambiente
+
+### Testes (Pytest)
+
+Para rodar os testes utilize o comando `pytest tests`
