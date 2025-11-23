@@ -29,7 +29,6 @@ def app_window(monkeypatch, qtbot):
 
 @given("a aplicação está carregada com acesso ao banco")
 def given_app_loaded(app_window, db_connection):
-    # Apenas retorna a janela já montada
     return app_window
 
 @when("eu inicio o jogo")
