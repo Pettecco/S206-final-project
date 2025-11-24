@@ -23,7 +23,6 @@ def test_game_end_to_end(qtbot, monkeypatch, db_connection):
     # MODO HEADLESS (SEM JANELA)
     # window = UltimateTicTacToe()
     # qtbot.addWidget(window)
-    # qtbot.wait(200)  # processa eventos iniciais no modo offscreen
 
     app = QApplication.instance()
     app.processEvents()
@@ -47,7 +46,7 @@ def test_game_end_to_end(qtbot, monkeypatch, db_connection):
     cursor.execute("SELECT COUNT(*) FROM results;")
     count = cursor.fetchone()[0]
     cursor.close()
-    assert count >= 1  # pelo menos um resultado inserido
+    assert count == 1  # pelo menos um resultado inserido
 
     # Clica no botão Reset
     qtbot.mouseClick(window.reset_button, Qt.LeftButton)
